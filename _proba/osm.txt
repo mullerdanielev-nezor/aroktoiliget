@@ -1,0 +1,14 @@
+('way', 'motorway', '') 372
+('way', 'oxbow', '') 12
+('relation', 'oxbow', '') 6
+('way', 'river', 'Tisza') 5
+('way', 'river', 'Sajó') 4
+('way', 'motorway', 'Oszlári Tisza-híd') 2
+('way', 'oxbow', 'Óhalászi-Holt-Tisza') 1
+('way', 'oxbow', 'Hordódi-Holt-Tisza') 1
+('way', 'oxbow', 'Szelepi morotva') 1
+('way', 'oxbow', 'Nagy-Nádas-tó') 1
+('relation', 'reservoir', 'Tisza-tó') 1
+('relation', 'oxbow', 'Cserőközi Holt-Tisza') 1
+('relation', 'oxbow', 'Kenyérgyári holtág') 1
+('relation', 'oxbow', 'Örvényi-morotva') 1

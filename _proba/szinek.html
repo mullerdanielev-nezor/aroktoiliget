@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="hu"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Színpaletták – Ároktői Liget</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;height:100vh;display:grid;grid-template-columns:340px 1fr;font:400 15px/1.45 system-ui,sans-serif;background:#ECE9E3;color:#222}
+aside{overflow:auto;padding:18px 16px 32px;background:#fff;border-right:1px solid #ddd}
+h1{font-size:18px;margin:0 0 4px}
+.hint{margin:0 0 14px;color:#555;font-size:13px}
+.views{display:flex;gap:6px;margin-bottom:14px}
+.views button{flex:1;padding:8px;border:1px solid #ccc;background:#fff;border-radius:6px;cursor:pointer;font:600 13px system-ui}
+.views button[aria-pressed=true]{background:#222;color:#fff;border-color:#222}
+.pal{display:block;width:100%;text-align:left;margin:0 0 10px;padding:12px;border:2px solid #e3e3e3;border-radius:10px;background:#fff;cursor:pointer;font:inherit;color:inherit}
+.pal:hover{border-color:#999}
+.pal[aria-pressed=true]{border-color:#222;box-shadow:0 0 0 2px #222 inset}
+.pal b{display:block;font-size:15px}
+.pal small{display:block;color:#666;margin-top:2px}
+.sw{display:flex;margin-top:10px;border-radius:6px;overflow:hidden;height:30px}
+.sw span{flex:1}
+.ok{margin-top:6px;font-size:12px;color:#2b6b3a}
+.ok.bad{color:#a33}
+main{display:grid;place-items:center;overflow:hidden;padding:12px}
+iframe{width:100%;height:100%;border:0;background:#fff;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,.15);transition:width .25s}
+main.mobile iframe{width:390px}
+@media (max-width:800px){body{grid-template-columns:1fr;grid-template-rows:auto 70vh}aside{max-height:none}}
+</style></head><body>
+<aside>
+  <h1>Színpaletták</h1>
+  <p class="hint">Kattintson egy palettára: jobbra élőben az egész oldalon látszik. Görgessen végig az oldalon. Válasszon, és írja meg a számát.</p>
+  <div class="views"><button type="button" data-view="desktop" aria-pressed="true">Asztali</button><button type="button" data-view="mobile" aria-pressed="false">Mobil</button></div>
+  <div id="list"></div>
+</aside>
+<main id="stage"><iframe id="site" src="../index.html" title="Az oldal előnézete"></iframe></main>
+<script>
+/* primary = fő (sötét) szín, accent = gombok / kiemelés, bg = háttér */
+var PALETTES = [
+  ["Erdőzöld és arany (jelenlegi)", "Nyugodt, természetközeli, prémium.", "#183E35", "#C5AA77", "#F5F0E6"],
+  ["Tisza-kék és homok", "Víz, nyugalom, tisztaság; a Tisza színei.", "#1F3A4D", "#D6B78A", "#F4F1EA"],
+  ["Zsálya és terrakotta", "Meleg, otthonos, kertes hangulat.", "#3F5A49", "#D08A6A", "#F6F1EA"],
+  ["Mélybordó és krém", "Elegáns, ünnepélyes, klasszikus.", "#5A1F2B", "#D9AE7E", "#F8F2EA"],
+  ["Éjkék és barack", "Megbízható, mégis barátságos.", "#1E2A44", "#EBAA82", "#F7F3EE"],
+  ["Olajzöld és mustár", "Vidéki, napfényes, földközeli.", "#3D4A2A", "#D9AB45", "#F4F0E2"],
+  ["Grafit és réz", "Modern, visszafogott, határozott.", "#2A2D30", "#C2834E", "#F3F1EE"],
+  ["Szilva és arany", "Méltóságteljes, meleg, különleges.", "#3E2F4F", "#CDB27A", "#F5F2F0"],
+  ["Petrol és korall", "Friss, élénk, mégis komoly.", "#0F4C5C", "#E8917A", "#F6F1EB"],
+  ["Diófa és zsálya", "Meleg barnák, puha zöld; nagyon otthonos.", "#4A3B2F", "#A9BFA2", "#F5EFE6"]
+];
+
+function hex(h){ h = h.replace("#",""); return [0,2,4].map(function(i){ return parseInt(h.substr(i,2),16); }); }
+function toHex(c){ return "#" + c.map(function(v){ v = Math.max(0, Math.min(255, Math.round(v))); return (v < 16 ? "0" : "") + v.toString(16); }).join("").toUpperCase(); }
+function mix(a, b, t){ a = hex(a); b = hex(b); return toHex(a.map(function(v,i){ return v + (b[i]-v)*t; })); }
+function lum(h){ return hex(h).map(function(v){ v/=255; return v <= .03928 ? v/12.92 : Math.pow((v+.055)/1.055, 2.4); }).reduce(function(s,v,i){ return s + v*[.2126,.7152,.0722][i]; }, 0); }
+function contrast(a, b){ var x = lum(a), y = lum(b); return (Math.max(x,y)+.05)/(Math.min(x,y)+.05); }
+function rgba(h, a){ var c = hex(h); return "rgba(" + c.join(",") + "," + a + ")"; }
+
+function tokens(p){
+  var P = p[2], A = p[3], B = p[4];
+  var ink = mix(P, "#000000", .55);
+  var accentInk = A; for (var t = 0; contrast(accentInk, B) < 4.6 && t < 1; t += .05) accentInk = mix(A, "#000000", t);
+  var deep = mix(P, "#000000", .25);
+  var onBtn = contrast(deep, A) >= 4.5 ? deep : (contrast("#FFFFFF", A) >= 4.5 ? "#FFFFFF" : mix(P, "#000000", .7));
+  return {
+    "--green": P, "--green-deep": deep, "--gold": A, "--gold-ink": accentInk,
+    "--ivory": B, "--ink": ink, "--ink-2": mix(ink, B, .3), "--stone": mix(ink, B, .5),
+    "--line": mix(B, ink, .12), "--line-strong": mix(B, ink, .32), "--tint": mix(P, "#FFFFFF", .9),
+    "--on-green": B, "--on-green-2": mix(B, P, .2), "--on-green-line": rgba(B, .22), "--ph": mix(B, A, .25),
+    "_onBtn": onBtn
+  };
+}
+
+var frame = document.getElementById("site"), list = document.getElementById("list"), current = 0;
+function apply(i){
+  current = i;
+  var d = frame.contentDocument; if (!d || !d.documentElement) return;
+  var tk = tokens(PALETTES[i]), root = d.documentElement;
+  Object.keys(tk).forEach(function(k){ if (k[0] === "-") root.style.setProperty(k, tk[k]); });
+  var st = d.getElementById("pal-override");
+  if (!st) { st = d.createElement("style"); st.id = "pal-override"; d.head.appendChild(st); }
+  /* arany gomb szövege: a választott palettához olvasható szín */
+  st.textContent = ".btn-gold,.btn-gold:hover{color:" + tk._onBtn + "!important}.m-bg{fill:" + mix(PALETTES[i][4], "#FFFFFF", .35) + "}";
+  var c = d.getElementById("consent"); if (c) c.hidden = true;
+  list.querySelectorAll(".pal").forEach(function(b, j){ b.setAttribute("aria-pressed", String(j === i)); });
+}
+PALETTES.forEach(function(p, i){
+  var tk = tokens(p), b = document.createElement("button");
+  b.type = "button"; b.className = "pal";
+  var c1 = contrast(tk._onBtn, p[3]), c2 = contrast(tk["--ink-2"], p[4]);
+  b.innerHTML = "<b>" + String(i+1).padStart(2,"0") + " · " + p[0] + "</b><small>" + p[1] + "</small>" +
+    '<span class="sw">' + [p[2], tk["--green-deep"], p[3], tk["--gold-ink"], p[4], tk["--tint"]].map(function(c){ return '<span style="background:' + c + '"></span>'; }).join("") + "</span>" +
+    '<span class="ok' + (c1 < 4.5 || c2 < 4.5 ? " bad" : "") + '">Olvashatóság: gombszöveg ' + c1.toFixed(1) + ":1 · szöveg " + c2.toFixed(1) + ":1</span>";
+  b.addEventListener("click", function(){ apply(i); });
+  list.appendChild(b);
+});
+frame.addEventListener("load", function(){ apply(current); });
+document.querySelectorAll("[data-view]").forEach(function(b){
+  b.addEventListener("click", function(){
+    document.getElementById("stage").classList.toggle("mobile", b.dataset.view === "mobile");
+    document.querySelectorAll("[data-view]").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); });
+  });
+});
+</script>
+</body></html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Betűtípus-próba – Ároktői Liget</title>
+<meta name="robots" content="noindex">
+<!-- CSAK HELYI PRÓBÁHOZ – az _proba mappát ne töltsd fel a tárhelyre. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="all-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Mulish:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--green:#183E35;--gold:#C5AA77;--ivory:#F5F0E6;--line:#E3DCCD;--ink:#202A25;--ink-2:#4F554D}
+*{box-sizing:border-box}
+body{margin:0;background:#E9E4D8;color:var(--ink);font:400 15px/1.5 "Segoe UI",system-ui,sans-serif;display:flex;flex-direction:column;height:100dvh}
+.bar{background:var(--white,#fff);border-bottom:1px solid var(--line);padding:12px 16px;display:flex;flex-direction:column;gap:10px}
+.bar-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+.bar h1{margin:0;font-size:15px;font-weight:700}
+.bar h1 span{font-weight:400;color:var(--ink-2)}
+.views{display:flex;gap:6px}
+.views button{min-height:36px;padding:0 12px;border:1.5px solid var(--line);background:#fff;border-radius:4px;font:600 13px/1 inherit;cursor:pointer}
+.views button[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:var(--ivory)}
+.opts{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x proximity}
+.opt{flex:0 0 auto;scroll-snap-align:start;width:210px;text-align:left;padding:10px 12px;border:1.5px solid var(--line);border-radius:6px;background:#fff;cursor:pointer;display:flex;flex-direction:column;gap:4px}
+.opt:hover{border-color:var(--ink-2)}
+.opt[aria-pressed="true"]{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green);background:#F4F7F3}
+.opt .h{font-size:22px;line-height:1.1;font-weight:500}
+.opt .b{font-size:13px;line-height:1.35;color:var(--ink-2)}
+.opt .n{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7A6034}
+.info{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--ink-2)}
+.info b{color:var(--ink)}
+.stage{flex:1;min-height:0;display:flex;justify-content:center;padding:16px;overflow:auto}
+.frame{width:100%;height:100%;border:0;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.12);border-radius:4px;transition:width .2s}
+.stage.mobile .frame{width:390px;max-width:100%;border-radius:22px;border:10px solid #1d1d1d}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="bar-top">
+    <h1>Betűtípus-próba <span>· kattints egy párosításra, a főoldal azonnal átvált</span></h1>
+    <div class="views" role="group" aria-label="Nézet">
+      <button type="button" data-view="mobile" aria-pressed="true">Telefon</button>
+      <button type="button" data-view="desktop" aria-pressed="false">Asztali</button>
+    </div>
+  </div>
+  <div class="opts" id="opts"></div>
+  <p class="info" id="info"></p>
+</div>
+<div class="stage mobile" id="stage">
+  <iframe class="frame" id="frame" src="../index.html" title="A főoldal előnézete"></iframe>
+</div>
+
+<script>
+var OPTIONS = [
+  { name: "Jelenlegi", serif: "Newsreader", sans: "Manrope",
+    mood: "Kortárs, visszafogott", note: "A mostani párosítás: modern szerkesztőségi címek, geometrikus szövegtest." },
+  { name: "Klasszikus elegancia", serif: "Playfair Display", sans: "Source Sans 3",
+    mood: "Prémium, ünnepélyes", note: "Erős kontrasztú címek, nagyon jól olvasható szövegtest. Szálloda-, rezidencia-hangulat." },
+  { name: "Meleg, otthonos", serif: "Lora", sans: "Nunito Sans",
+    mood: "Barátságos, családias", note: "Lágy, kerekded formák – a „gondoskodás” üzenethez illik. Hozzátartozóknak bizalomkeltő." },
+  { name: "Karakteres modern", serif: "Fraunces", sans: "Inter",
+    mood: "Egyedi, friss", note: "Kissé játékos címek, nagyon semleges szövegtest. Megkülönböztet a tipikus idősotthon-oldalaktól." },
+  { name: "Luxus", serif: "Cormorant Garamond", sans: "Mulish",
+    mood: "Exkluzív, finom", note: "Vékony, elegáns címek. Csak nagy méretben szép – kis kijelzőn halványabb." },
+  { name: "Legjobb olvashatóság", serif: "Literata", sans: "Atkinson Hyperlegible Next",
+    mood: "Akadálymentes, nyugodt", note: "A szövegtestet gyengénlátóknak tervezték (a betűk nem téveszthetők össze). Idős olvasóknak ez a legbiztonságosabb." },
+  { name: "Letisztult kontraszt", serif: "DM Serif Display", sans: "DM Sans",
+    mood: "Határozott, rendezett", note: "Telt, egyetlen vastagságú címek és hozzá illő, tiszta szövegtest – egy betűcsaládból." }
+];
+var SAMPLE = "Árvíztűrő gondoskodás";
+var frame = document.getElementById("frame"), opts = document.getElementById("opts"), info = document.getElementById("info"), stage = document.getElementById("stage");
+var current = 0;
+try { current = Math.max(0, Math.min(OPTIONS.length - 1, +localStorage.getItem("font_probe") || 0)); } catch(e){}
+
+OPTIONS.forEach(function(o, i){
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "opt";
+  b.innerHTML = '<span class="n"></span><span class="h"></span><span class="b"></span>';
+  b.querySelector(".n").textContent = (i + 1) + ". " + o.name;
+  b.querySelector(".h").textContent = SAMPLE; b.querySelector(".h").style.fontFamily = '"' + o.serif + '",serif';
+  b.querySelector(".b").textContent = o.serif + " + " + o.sans; b.querySelector(".b").style.fontFamily = '"' + o.sans + '",sans-serif';
+  b.addEventListener("click", function(){ apply(i); });
+  opts.appendChild(b);
+});
+
+function apply(i){
+  current = i; var o = OPTIONS[i];
+  try { localStorage.setItem("font_probe", i); } catch(e){}
+  [].forEach.call(opts.children, function(b, k){ b.setAttribute("aria-pressed", String(k === i)); });
+  info.innerHTML = "";
+  [["Címek", o.serif], ["Szöveg", o.sans], ["Hangulat", o.mood]].forEach(function(p){
+    var s = document.createElement("span"); s.innerHTML = p[0] + ": <b></b>"; s.querySelector("b").textContent = p[1]; info.appendChild(s);
+  });
+  var n = document.createElement("span"); n.textContent = o.note; info.appendChild(n);
+  inject();
+}
+/* A főoldal --serif / --sans változóit írjuk felül az iframe-ben (azonos origin, ezért elérhető). */
+function inject(){
+  var d; try { d = frame.contentDocument; } catch(e){ return; }
+  if (!d || !d.head) return;
+  if (!d.getElementById("probe-fonts")) {
+    var l = d.createElement("link"); l.id = "probe-fonts"; l.rel = "stylesheet"; l.href = document.getElementById("all-fonts").href; d.head.appendChild(l);
+  }
+  var st = d.getElementById("probe-style"); if (!st) { st = d.createElement("style"); st.id = "probe-style"; d.head.appendChild(st); }
+  var o = OPTIONS[current];
+  st.textContent = ':root{--serif:"' + o.serif + '",Georgia,serif !important;--sans:"' + o.sans + '","Segoe UI",system-ui,sans-serif !important}#consent{display:none!important}';
+}
+frame.addEventListener("load", inject);
+document.querySelectorAll("[data-view]").forEach(function(b){
+  b.addEventListener("click", function(){
+    var v = b.dataset.view; stage.classList.toggle("mobile", v === "mobile");
+    document.querySelectorAll("[data-view]").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); });
+  });
+});
+document.addEventListener("keydown", function(e){
+  if (e.key === "ArrowRight") apply((current + 1) % OPTIONS.length);
+  if (e.key === "ArrowLeft") apply((current - 1 + OPTIONS.length) % OPTIONS.length);
+});
+apply(current);
+</script>
+</body>
+</html>

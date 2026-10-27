@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\Letolt\liget\_proba\toarchivo.py", line 40, in <module>
+    assert k == 1, p
+           ^^^^^^
+AssertionError: aroktoi-liget-index.html

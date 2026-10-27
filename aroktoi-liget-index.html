@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ároktői Liget Senior Rezidencia</title>
+<meta name="description" content="Az Ároktőre tervezett, 100 férőhelyes senior rezidencia: 24 órás felügyelet és gondozás, teljes ellátás, közösségi élet és kertkapcsolat. Jelentkezzen az előzetes várólistára.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hu_HU">
+<meta property="og:site_name" content="Ároktői Liget Senior Rezidencia">
+<meta property="og:title" content="Ároktői Liget Senior Rezidencia – tervezett senior rezidencia Ároktőn">
+<meta property="og:description" content="Biztonság, figyelmes gondoskodás és közösségi élet nyugodt, otthonos környezetben. Jelentkezzen az előzetes várólistára.">
+<!-- og:image: a fő látványterv 1200×630 px-es változata, ha elkészül -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: conversion landing. Green hero with the waitlist form above the fold, then alternating
+   ivory/white blocks, one green "how it works" band, survey and FAQ. Sticky CTA on phones. */
+:root{
+  --green:#183E35; --green-deep:#10302A; --gold:#C5AA77; --gold-ink:#7A6034;
+  --ivory:#F5F0E6; --white:#FFFFFF; --ink:#202A25; --ink-2:#4F554D; --stone:#918B7D;
+  --line:#E3DCCD; --line-strong:#B4AA97; --tint:#E9EFE8;
+  --on-green:#F5F0E6; --on-green-2:#CDD5CA; --on-green-line:rgba(245,240,230,.22);
+  --error:#9B2C1E; --error-bg:#FBF0EC; --ph:#EDE4D1;
+  --serif:"Newsreader","Iowan Old Style",Georgia,"Times New Roman",serif;
+  --sans:"Manrope","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --r:4px; --header-h:72px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--ink);font:400 1.125rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--white)}
+img{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(2.125rem,1.4rem + 2.4vw,3.25rem);line-height:1.08}
+h3{font-size:1.5rem;line-height:1.2}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.on-green :focus-visible{outline-color:var(--gold)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+[id]{scroll-margin-top:calc(var(--header-h) + env(safe-area-inset-top,0px) + 12px)}
+.wrap{max-width:1240px;margin-inline:auto;padding-left:max(clamp(16px,4vw,48px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4vw,48px),env(safe-area-inset-right,0px))}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip:focus{position:fixed!important;left:16px;top:16px;width:auto;height:auto;clip:auto;z-index:50;background:var(--white);padding:10px 14px}
+.muted{color:var(--ink-2)}
+.small{font-size:.9375rem;line-height:1.55}
+.ph{background:var(--ph);color:var(--ink);border:1px dashed var(--line-strong);padding:0 .35em;border-radius:2px;font-size:.95em}
+.site-footer .ph{background:transparent;color:var(--gold);border-color:var(--gold)}
+.tick{flex:none;width:22px;height:22px;margin-top:3px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:.85em 1.5em;font:700 1rem/1.25 var(--sans);text-align:center;text-decoration:none;border-radius:var(--r);border:1.5px solid transparent;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s}
+.btn-primary{background:var(--green);color:var(--ivory)}
+.btn-primary:hover{background:var(--green-deep)}
+.btn-gold{background:var(--gold);color:var(--green-deep)}
+.btn-gold:hover{background:#D3BB8E}
+.btn-ghost{background:transparent;color:var(--green);border-color:var(--line-strong)}
+.btn-ghost:hover{border-color:var(--green)}
+.btn-ghost-light{background:transparent;color:var(--on-green);border-color:var(--on-green-line)}
+.btn-ghost-light:hover{border-color:var(--on-green)}
+.btn-block{width:100%}
+.btn[aria-busy="true"]{opacity:.72;cursor:progress}
+.btn-link{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.arrow{width:18px;height:18px;flex:none}
+
+/* Header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--white);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:var(--header-h)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);min-width:0}
+.brand img{height:40px;width:auto;flex:none}
+.brand-text{display:flex;flex-direction:column;gap:3px}
+.brand-name{font:600 1.1875rem/1 var(--serif);letter-spacing:.07em;white-space:nowrap}
+.brand-sub{font:600 .6875rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);white-space:nowrap}
+.nav{display:none}
+.nav a:not(.btn){text-decoration:none;font-weight:500;font-size:1rem;color:var(--ink-2)}
+.nav a:not(.btn):hover{color:var(--ink)}
+.header-actions{display:flex;align-items:center;gap:8px}
+.header-actions .btn{min-height:44px;padding:.55em 1em;font-size:.9375rem}
+.menu-btn{min-height:44px;padding:0 14px;border:1.5px solid var(--line-strong);background:var(--white);color:var(--ink);font:600 .9375rem/1 var(--sans);border-radius:var(--r);cursor:pointer}
+.mobile-nav{border-top:1px solid var(--line);background:var(--white)}
+.mobile-nav ul{list-style:none;margin:0;padding:6px 0 18px}
+.mobile-nav a{display:block;padding:14px 0;font:500 1.375rem/1.2 var(--serif);text-decoration:none;border-bottom:1px solid var(--line)}
+@media (min-width:1120px){
+  .nav{display:flex;align-items:center;gap:28px}
+  .menu-btn,.mobile-nav,.header-actions{display:none!important}
+}
+@media (max-width:400px){.brand-text{display:none}.brand img{height:44px}}
+
+/* Hero */
+.hero{background:var(--green);color:var(--on-green);padding-block:clamp(36px,6vw,88px) clamp(48px,7vw,104px)}
+.hero-grid{display:grid;gap:40px}
+.hero-grid > *{min-width:0}
+.hero-copy{display:flex;flex-direction:column;gap:24px}
+.kicker{font:600 .9375rem/1.3 var(--sans);color:var(--gold);letter-spacing:.02em}
+.hero h1{font-size:clamp(2.75rem,1.4rem + 4.3vw,4.875rem);line-height:1.02;letter-spacing:-.02em;color:var(--on-green)}
+.hero-sub{font-size:1.25rem;line-height:1.55;color:var(--on-green-2);max-width:31em}
+.facts{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:12px}
+.facts li{display:flex;gap:12px;font-weight:600;font-size:1.0625rem}
+.facts .tick{color:var(--gold)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero-note{font-size:.9375rem;color:var(--on-green-2)}
+.hero-figure{margin:clamp(40px,5vw,72px) 0 0;display:flex;flex-direction:column;gap:10px}
+.hero-figure img,.render img{width:100%;height:auto;border-radius:var(--r)}
+.hero-figure figcaption{font-size:.9375rem;color:var(--on-green-2)}
+@media (min-width:1000px){
+  .hero-grid{grid-template-columns:minmax(0,7fr) minmax(400px,5fr);gap:clamp(48px,5vw,88px);align-items:center}
+  .hero-ctas .only-mobile{display:none}
+}
+
+/* Form card */
+.card{background:var(--white);color:var(--ink);border-radius:6px;padding:clamp(22px,3vw,36px)}
+.hero .card{border:1px solid rgba(0,0,0,.04)}
+.card-head{display:flex;flex-direction:column;gap:6px}
+.card-title{font:500 clamp(1.625rem,1.4rem + .8vw,2rem)/1.15 var(--serif)}
+.card-sub{font-size:.9375rem;color:var(--ink-2)}
+.progress{display:flex;flex-direction:column;gap:8px;margin:20px 0 22px}
+.progress-bar{display:flex;gap:6px}
+.progress-bar span{flex:1;height:4px;border-radius:2px;background:var(--line)}
+.progress-bar span.on{background:var(--green)}
+.progress-label{font:700 .875rem/1.3 var(--sans);color:var(--ink-2)}
+form{display:flex;flex-direction:column;gap:24px}
+.step{display:flex;flex-direction:column;gap:24px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.row-2{display:grid;gap:24px}
+@media (min-width:600px){.row-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.field > label,legend{font:700 1rem/1.35 var(--sans);color:var(--ink)}
+.opt{font-weight:500;color:var(--ink-2)}
+.req{color:var(--gold-ink);margin-left:2px}
+.hint{font-size:.9375rem;color:var(--ink-2);line-height:1.5}
+input[type="text"],input[type="email"],input[type="tel"],select,textarea{width:100%;min-height:54px;padding:12px 14px;font:400 1.0625rem/1.4 var(--sans);color:var(--ink);background:var(--white);border:1.5px solid var(--line-strong);border-radius:var(--r)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--green);outline-offset:1px;border-color:var(--green)}
+select{appearance:none;-webkit-appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23183E35' stroke-width='1.8'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+textarea{min-height:112px;resize:vertical}
+[aria-invalid="true"]{border-color:var(--error)!important}
+fieldset{border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:column;gap:10px}
+legend{padding:0;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.chip{position:relative;display:flex}
+.chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.chip span{display:flex;align-items:center;width:100%;min-height:50px;padding:10px 16px;border:1.5px solid var(--line-strong);border-radius:var(--r);background:var(--white);font:600 1rem/1.3 var(--sans);transition:border-color .12s,background-color .12s}
+.chip:hover span{border-color:var(--green)}
+.chip input:checked + span{background:var(--green);border-color:var(--green);color:var(--ivory)}
+.chip input:focus-visible + span{outline:3px solid var(--gold-ink);outline-offset:2px}
+fieldset.is-invalid .chip span{border-color:var(--error)}
+.list-choices{display:grid;gap:8px}
+.check{display:flex;align-items:flex-start;gap:12px;font-size:.9375rem;line-height:1.5}
+.check input{width:22px;height:22px;margin:0;flex:none;accent-color:var(--green)}
+.check label{cursor:pointer}
+.checks{display:flex;flex-direction:column;gap:14px}
+.field-error{color:var(--error);font-size:.9375rem;font-weight:600;line-height:1.45}
+.form-alert{padding:12px 14px;border:1.5px solid var(--error);background:var(--error-bg);color:var(--error);font-weight:600;font-size:.9375rem;line-height:1.5;border-radius:var(--r)}
+.form-alert:focus{outline:3px solid var(--error);outline-offset:2px}
+.form-info{padding:12px 14px;border:1px solid var(--line-strong);background:var(--ivory);font-size:.9375rem;line-height:1.5;border-radius:var(--r)}
+.form-actions{display:flex;flex-direction:column;gap:12px}
+.form-actions .back{align-self:flex-start;background:none;border:0;padding:6px 0;font:600 .9375rem var(--sans);color:var(--ink-2);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.reassure{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.875rem;color:var(--ink-2)}
+.reassure span{display:inline-flex;align-items:center;gap:6px}
+.reassure svg{width:16px;height:16px;color:var(--green)}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.success{display:flex;flex-direction:column;gap:14px}
+.success h3{font-size:1.875rem}
+.success h3:focus{outline:none}
+.success .mark{width:44px;height:44px;border-radius:50%;background:var(--tint);color:var(--green);display:grid;place-items:center}
+.success .mark svg{width:24px;height:24px}
+
+/* Sections */
+.section{padding-block:clamp(64px,8vw,120px)}
+.bg-white{background:var(--white)}
+.statement{font:500 clamp(2.25rem,1.25rem + 3.4vw,4.125rem)/1.05 var(--serif);letter-spacing:-.02em;max-width:15em;text-wrap:balance}
+.intro-cols{display:grid;gap:20px;margin-top:clamp(28px,4vw,48px);max-width:60em;color:var(--ink-2);font-size:1.1875rem}
+@media (min-width:860px){.intro-cols{grid-template-columns:1fr 1fr;gap:40px}}
+.projectbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:clamp(40px,5vw,64px) 0 0;background:var(--white);border-radius:6px;overflow:hidden}
+.projectbar div{padding:20px 22px;min-width:0;border-top:1px solid var(--line)}
+.projectbar div:nth-child(-n+2){border-top:0}
+.projectbar div:nth-child(2n){border-left:1px solid var(--line)}
+.projectbar dt{font:600 .875rem/1.3 var(--sans);color:var(--ink-2)}
+.projectbar dd{margin:6px 0 0;font:500 1.375rem/1.2 var(--serif)}
+@media (min-width:900px){
+  .projectbar{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .projectbar div{border-top:0}
+  .projectbar div + div{border-left:1px solid var(--line)}
+}
+.render{margin:clamp(40px,5vw,64px) 0 0;display:flex;flex-direction:column;gap:10px}
+.render figcaption{font-size:.9375rem;color:var(--ink-2)}
+
+.two-col{display:grid;gap:40px}
+.two-col > *{min-width:0}
+.col-head{display:flex;flex-direction:column;gap:18px}
+@media (min-width:980px){.two-col{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(48px,6vw,96px)}.two-col .stick{position:sticky;top:calc(var(--header-h) + env(safe-area-inset-top,0px) + 32px);align-self:start}}
+
+.checklist{list-style:none;margin:0;padding:0;display:grid;gap:0 32px}
+@media (min-width:640px){.checklist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.checklist li{display:flex;align-items:flex-start;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);font:600 1.125rem/1.4 var(--sans)}
+.checklist .dot{flex:none;width:30px;height:30px;border-radius:50%;background:var(--tint);color:var(--green);display:grid;place-items:center;margin-top:-2px}
+.checklist .dot svg{width:16px;height:16px}
+
+.gallery{display:grid;gap:clamp(16px,2.5vw,32px);margin-top:clamp(32px,4vw,56px)}
+@media (min-width:760px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery .span{grid-column:1/-1}}
+.gallery .render{margin:0}
+
+/* Pricing */
+.price-head{display:flex;flex-direction:column;gap:16px;max-width:44em;margin-bottom:clamp(32px,4vw,48px)}
+.price-card{background:var(--white);border-radius:6px;overflow:hidden}
+.prices{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.prices thead th{font:600 .9375rem/1.35 var(--sans);color:var(--ink-2);text-align:left;padding:18px clamp(16px,3vw,32px);border-bottom:1px solid var(--line)}
+.prices .num{text-align:right}
+.prices tbody th{text-align:left;font-weight:400;padding:22px clamp(16px,3vw,32px);border-bottom:1px solid var(--line)}
+.prices td{padding:22px clamp(16px,3vw,32px);border-bottom:1px solid var(--line);font:700 clamp(1.125rem,1rem + .6vw,1.5rem)/1.3 var(--sans);white-space:nowrap}
+.prices tbody tr:last-child > *{border-bottom:0}
+.room-name{display:block;font:500 clamp(1.375rem,1.2rem + .7vw,1.75rem)/1.15 var(--serif)}
+.room-meta{display:block;margin-top:2px;font-size:.9375rem;color:var(--ink-2)}
+.unit{font-weight:500;font-size:.9375rem;color:var(--ink-2)}
+.monthly{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 24px;padding:22px clamp(16px,3vw,32px);background:var(--green);color:var(--on-green)}
+.monthly-label{font-weight:600;font-size:1.0625rem}
+.monthly-label small{display:block;font-weight:500;font-size:.9375rem;color:var(--on-green-2)}
+.monthly-value{font:500 clamp(2rem,1.5rem + 1.8vw,2.75rem)/1 var(--serif);white-space:nowrap}
+.monthly-value .unit{font:500 1rem/1 var(--sans);color:var(--on-green-2);margin-left:.3em}
+.price-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 40px;margin-top:24px}
+.price-foot p{max-width:40em}
+
+/* How it works */
+.how{background:var(--green);color:var(--on-green)}
+.how-head{display:grid;gap:20px;margin-bottom:clamp(36px,5vw,64px)}
+.how-head p{color:var(--on-green-2);max-width:34em}
+@media (min-width:980px){.how-head{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(48px,6vw,96px);align-items:end}}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:28px}
+@media (min-width:860px){.steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}}
+.steps li{display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid var(--on-green-line)}
+.step-no{font:500 2.75rem/1 var(--serif);color:var(--gold)}
+.steps h3{font:700 1.1875rem/1.35 var(--sans)}
+.steps p{color:var(--on-green-2);font-size:1rem}
+.how-foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:clamp(36px,5vw,56px);padding-top:28px;border-top:1px solid var(--on-green-line)}
+.how-foot .clarify{flex:1 1 22em;font-weight:600;font-size:1rem}
+
+/* Survey */
+.points{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.points li{display:flex;gap:12px;font-weight:600;font-size:1.0625rem}
+.points .tick{color:var(--green)}
+.bordered{border:1px solid var(--line)}
+
+/* FAQ */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 0;cursor:pointer;list-style:none;font:600 1.1875rem/1.4 var(--sans)}
+.faq summary::-webkit-details-marker{display:none}
+.pm{position:relative;flex:none;width:32px;height:32px;border-radius:50%;background:var(--tint)}
+.pm::before,.pm::after{content:"";position:absolute;left:10px;right:10px;top:50%;height:2px;margin-top:-1px;background:var(--green)}
+.pm::after{transform:rotate(90deg);transition:transform .2s}
+.faq details[open] .pm::after{transform:rotate(0deg)}
+.faq-a{padding:0 0 24px;max-width:42em;color:var(--ink-2)}
+
+/* Privacy */
+.privacy{padding-block:40px;border-top:1px solid var(--line)}
+.privacy summary{cursor:pointer;font:600 1.0625rem/1.4 var(--sans);list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.privacy summary::-webkit-details-marker{display:none}
+.privacy-grid{display:grid;gap:0;margin:20px 0 0}
+.privacy-grid div{display:grid;gap:4px;padding-block:14px;border-top:1px solid var(--line)}
+.privacy-grid dt{font-weight:700;font-size:1rem}
+.privacy-grid dd{margin:0;color:var(--ink-2);font-size:1rem}
+@media (min-width:860px){.privacy-grid div{grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:40px}}
+
+/* Footer */
+.site-footer{background:var(--green-deep);color:var(--on-green);padding-block:clamp(48px,6vw,80px) 28px}
+.footer-grid{display:grid;gap:32px}
+.footer-grid > *{min-width:0}
+@media (min-width:860px){.footer-grid{grid-template-columns:minmax(0,5fr) minmax(0,3fr) minmax(0,4fr)}}
+.footer-brand{font:500 clamp(1.75rem,1.4rem + 1.2vw,2.375rem)/1.1 var(--serif)}
+.footer-col{display:flex;flex-direction:column;gap:10px;font-size:1rem}
+.footer-col h3{font:700 .9375rem/1.3 var(--sans);color:var(--gold)}
+.footer-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.footer-col a{text-decoration-color:var(--on-green-line);text-underline-offset:4px}
+.footer-col a:hover{text-decoration-color:var(--gold)}
+.footer-bottom{margin-top:48px;padding-top:20px;border-top:1px solid var(--on-green-line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 32px;font-size:.9375rem;color:var(--on-green-2)}
+
+/* Sticky mobile CTA */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--white);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+@media (min-width:1000px){.sticky-cta{display:none!important}}
+
+/* Consent */
+.consent{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--white);border-top:1px solid var(--line-strong);padding-bottom:env(safe-area-inset-bottom,0px)}
+.consent .wrap{padding-block:18px;display:grid;gap:14px}
+.consent-text p{font-size:.9375rem;color:var(--ink-2);max-width:56em}
+.consent-text strong{color:var(--ink)}
+.consent-actions{display:flex;flex-wrap:wrap;gap:8px}
+.consent-actions .btn{min-height:44px;padding:.55em 1.05em;font-size:.9375rem}
+.consent-prefs{display:flex;flex-direction:column;gap:12px}
+@media (min-width:1040px){.consent .wrap{grid-template-columns:minmax(0,1fr) auto;align-items:center}.consent-prefs{grid-column:1/-1}}
+</style>
+
+<!--
+  ÉLESÍTÉS – a szkript elején lévő CONFIG:
+  submitEndpoint    saját backend / CRM webhook (Make, n8n, Zapier, HubSpot, Google Apps Script), JSON POST
+  metaPixelId       Meta Pixel azonosító (csak hozzájárulás után töltődik be)
+  ga4MeasurementId  GA4 mérési azonosító (csak hozzájárulás után töltődik be)
+  renders           látványtervek URL-jei; a képes blokkok csak kitöltve jelennek meg
+-->
+</head>
+<body>
+<a class="sr-only skip" href="#tartalom">Ugrás a tartalomra</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Ároktői Liget Senior Rezidencia – az oldal tetejére">
+      <img src="data:image/png;base64,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" alt="" width="54" height="40">
+      <span class="brand-text">
+        <span class="brand-name">ÁROKTŐI LIGET</span>
+        <span class="brand-sub">Senior Rezidencia</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Fő navigáció">
+      <a href="#rezidencia">A rezidenciáról</a>
+      <a href="#ellatas">Ellátás</a>
+      <a href="#dijak">Szobák és díjak</a>
+      <a href="#gyik">Gyakori kérdések</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+      <a class="btn btn-primary" href="#jelentkezes" data-open="varolista">Előzetes várólista</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="#jelentkezes" data-open="varolista">Várólista</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav">Menü</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <div class="wrap">
+      <ul>
+        <li><a href="#rezidencia">A rezidenciáról</a></li>
+        <li><a href="#ellatas">Ellátás</a></li>
+        <li><a href="#dijak">Szobák és díjak</a></li>
+        <li><a href="#gyik">Gyakori kérdések</a></li>
+        <li><a href="#kapcsolat">Kapcsolat</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main id="tartalom">
+
+  <!-- HERO + WAITLIST FORM -->
+  <section class="hero on-green" id="top" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Tervezett senior rezidencia · Ároktő</p>
+          <h1 id="hero-title">A gondoskodásnak is lehet otthona.</h1>
+          <p class="hero-sub">Ismerje meg az Ároktőre tervezett senior rezidenciát, ahol a biztonság, a figyelmes gondoskodás és a közösségi élet egy nyugodt, otthonos környezetben találkozhat.</p>
+          <ul class="facts">
+            <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>Tervezett 100 férőhely</li>
+            <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>24 órás felügyelet és gondozás</li>
+            <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>Szállás és teljes ellátás, napi étkezéssel</li>
+          </ul>
+          <div class="hero-ctas">
+            <a class="btn btn-gold only-mobile" href="#jelentkezes" data-open="varolista">Előzetes várólistára jelentkezem</a>
+            <a class="btn btn-ghost-light" href="#rezidencia">Megismerem a terveket</a>
+          </div>
+          <p class="hero-note">A projekt előkészítési szakaszban van. A feltüntetett adatok előzetesek.</p>
+        </div>
+
+        <div class="card" id="jelentkezes">
+          <div data-panel="varolista">
+            <div class="card-head">
+              <h2 class="card-title" id="wl-title" tabindex="-1">Jelentkezés az előzetes várólistára</h2>
+              <p class="card-sub">Díjmentes, és nem jelent férőhelyfoglalást vagy garantált felvételt.</p>
+            </div>
+            <div class="progress" aria-live="polite">
+              <div class="progress-bar" aria-hidden="true"><span class="on"></span><span></span></div>
+              <p class="progress-label" id="wl-progress">1. lépés a 2-ből: néhány gyors kérdés</p>
+            </div>
+            <form id="form-varolista" data-type="varolista" novalidate aria-labelledby="wl-title">
+              <div class="form-alert" data-role="alert" role="alert" tabindex="-1" hidden></div>
+              <div class="hp" aria-hidden="true"><label for="wl-website">Weboldal</label><input type="text" id="wl-website" name="website" tabindex="-1" autocomplete="off"></div>
+
+              <div class="step" data-step="1">
+                <fieldset data-required="relation" data-msg="Kérjük, válassza ki, kinek szól az érdeklődés." aria-describedby="wl-relation-err">
+                  <legend>Kinek szól az érdeklődés?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="chips grid">
+                    <label class="chip"><input type="radio" id="wl-rel-self" name="relation" value="sajat"><span>Saját magamnak</span></label>
+                    <label class="chip"><input type="radio" id="wl-rel-rel" name="relation" value="hozzatartozo"><span>Hozzátartozómnak</span></label>
+                  </div>
+                  <p class="field-error" id="wl-relation-err" hidden></p>
+                </fieldset>
+                <fieldset data-required="room" data-msg="Kérjük, válasszon szobatípust." aria-describedby="wl-room-err">
+                  <legend>Melyik szobatípus érdekli?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="chips grid">
+                    <label class="chip"><input type="radio" id="wl-room-1" name="room" value="egyagyas"><span>Egyágyas</span></label>
+                    <label class="chip"><input type="radio" id="wl-room-2" name="room" value="ketagyas"><span>Kétágyas</span></label>
+                    <label class="chip"><input type="radio" id="wl-room-4" name="room" value="negyagyas"><span>Négyágyas</span></label>
+                    <label class="chip"><input type="radio" id="wl-room-x" name="room" value="nem_dontott"><span>Még nem tudom</span></label>
+                  </div>
+                  <p class="field-error" id="wl-room-err" hidden></p>
+                </fieldset>
+                <fieldset data-required="timing" data-msg="Kérjük, válassza ki a várható időpontot." aria-describedby="wl-timing-err">
+                  <legend>Mikorra tervezi a beköltözést?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="chips grid">
+                    <label class="chip"><input type="radio" id="wl-t-1" name="timing" value="1_even_belul"><span>1 éven belül</span></label>
+                    <label class="chip"><input type="radio" id="wl-t-2" name="timing" value="1_2_ev"><span>1–2 éven belül</span></label>
+                    <label class="chip"><input type="radio" id="wl-t-3" name="timing" value="2_ev_utan"><span>Később</span></label>
+                    <label class="chip"><input type="radio" id="wl-t-4" name="timing" value="nem_tudja"><span>Még nem tudom</span></label>
+                  </div>
+                  <p class="field-error" id="wl-timing-err" hidden></p>
+                </fieldset>
+                <div class="form-actions">
+                  <button class="btn btn-primary btn-block" type="button" data-next>Tovább<svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+                </div>
+              </div>
+
+              <div class="step" data-step="2" hidden>
+                <div class="field">
+                  <label for="wl-name">Kapcsolattartó neve<span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="wl-name" name="name" autocomplete="name" required maxlength="120" data-msg="Kérjük, adja meg a kapcsolattartó nevét." aria-describedby="wl-name-err">
+                  <p class="field-error" id="wl-name-err" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="wl-email">E-mail-cím<span class="req" aria-hidden="true">*</span></label>
+                  <input type="email" id="wl-email" name="email" autocomplete="email" inputmode="email" required maxlength="160" data-msg="Kérjük, adja meg az e-mail-címét." aria-describedby="wl-email-err">
+                  <p class="field-error" id="wl-email-err" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="wl-phone">Telefonszám<span class="req" aria-hidden="true">*</span></label>
+                  <input type="tel" id="wl-phone" name="phone" autocomplete="tel" inputmode="tel" required maxlength="40" placeholder="+36 30 123 4567" data-msg="Kérjük, adja meg a telefonszámát." aria-describedby="wl-phone-err">
+                  <p class="field-error" id="wl-phone-err" hidden></p>
+                </div>
+                <div class="checks">
+                  <div class="field">
+                    <div class="check"><input type="checkbox" id="wl-pricing" name="pricing_reviewed" required data-msg="Kérjük, erősítse meg, hogy megismerte az előzetes díjakat." aria-describedby="wl-pricing-err"><label for="wl-pricing">Megismertem az <a href="#dijak">előzetes díjakat</a>, és tudomásul veszem, hogy azok nem véglegesek.<span class="req" aria-hidden="true">*</span></label></div>
+                    <p class="field-error" id="wl-pricing-err" hidden></p>
+                  </div>
+                  <div class="field">
+                    <div class="check"><input type="checkbox" id="wl-privacy" name="privacy" required data-msg="A küldéshez kérjük, fogadja el az adatkezelési tájékoztatót." aria-describedby="wl-privacy-err"><label for="wl-privacy">Elolvastam az <a href="#adatkezeles" data-privacy>adatkezelési tájékoztatót</a>, és hozzájárulok adataim kezeléséhez a várólista céljából.<span class="req" aria-hidden="true">*</span></label></div>
+                    <p class="field-error" id="wl-privacy-err" hidden></p>
+                  </div>
+                  <div class="check"><input type="checkbox" id="wl-marketing" name="marketing"><label for="wl-marketing">E-mailben is kérek híreket a projektről. <span class="opt">(Nem kötelező)</span></label></div>
+                </div>
+                <p class="form-info" data-role="backend-note" hidden>Ez a változat még nincs adatkezelő rendszerhez kötve, ezért a beküldött adatokat most nem tudjuk fogadni.</p>
+                <div class="form-actions">
+                  <button class="btn btn-primary btn-block" type="submit" data-label="Feliratkozom az előzetes várólistára">Feliratkozom az előzetes várólistára</button>
+                  <button class="back" type="button" data-back>Vissza az előző lépéshez</button>
+                </div>
+              </div>
+            </form>
+            <div class="reassure" style="margin-top:18px">
+              <span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>Kb. 1 perc</span>
+              <span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>Nem jár fizetési kötelezettséggel</span>
+              <span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>Egészségügyi adatot nem kérünk</span>
+            </div>
+          </div>
+          <div class="success" data-role="success" hidden>
+            <div class="mark" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+            <h3 tabindex="-1">Köszönjük, jelentkezését rögzítettük.</h3>
+            <p class="muted">Felvettük az előzetes várólistára. A projekt előrehaladásáról a megadott elérhetőségeken tájékoztatjuk.</p>
+            <p class="small muted">A jelentkezés nem jelent férőhelyfoglalást vagy garantált felvételt.</p>
+          </div>
+        </div>
+      </div>
+
+      <figure class="hero-figure" data-render-block="hero" hidden>
+        <div data-render="hero" data-alt="Az Ároktői Liget Senior Rezidencia tervezett épületének látványterve"></div>
+        <figcaption>A bemutatott épület látványterv. A projekt előkészítési szakaszban van.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section" id="rezidencia" aria-labelledby="intro-title">
+    <div class="wrap">
+      <h2 class="statement" id="intro-title">Méltó környezet az élet következő fejezetéhez.</h2>
+      <div class="intro-cols">
+        <p>Az Ároktői Liget egy tervezett, 100 férőhelyes senior rezidencia, amely egy meglévő épület felújításával és bővítésével valósulhat meg.</p>
+        <p>A koncepció középpontjában a mindennapi biztonság, a személyes gondoskodás és a közösséghez tartozás áll.</p>
+      </div>
+      <dl class="projectbar">
+        <div><dt>Helyszín</dt><dd>Ároktő</dd></div>
+        <div><dt>Tervezett férőhely</dt><dd>100 fő</dd></div>
+        <div><dt>Projekt</dt><dd>Meglévő épület felújítása és bővítése</dd></div>
+        <div><dt>Állapot</dt><dd>Előkészítési szakasz</dd></div>
+      </dl>
+      <figure class="render" data-render-block="intro" hidden>
+        <div data-render="intro" data-alt="A meglévő épület felújításának és bővítésének látványterve"></div>
+        <figcaption>Látványterv: a meglévő épület felújítása és bővítése. Koncepcionális kép.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CARE -->
+  <section class="section bg-white" id="ellatas" aria-labelledby="care-title">
+    <div class="wrap two-col">
+      <div class="col-head stick">
+        <h2 id="care-title">Gondoskodás a mindennapokban.</h2>
+        <p class="muted">A rezidencia koncepciója az alábbi szolgáltatásokkal számol. A részleteket a projekt előrehaladásával véglegesítik.</p>
+      </div>
+      <ul class="checklist">
+        <li><span class="dot"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>24 órás felügyelet és gondozás</li>
+        <li><span class="dot"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>Szállás és teljes ellátás</li>
+        <li><span class="dot"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>Napi étkezés</li>
+        <li><span class="dot"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>Alapápolás és segítségnyújtás</li>
+        <li><span class="dot"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>Közösségi programok</li>
+        <li><span class="dot"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>Mentálhigiénés foglalkozások</li>
+        <li><span class="dot"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>Takarítás</li>
+        <li><span class="dot"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></span>Közösségi terek és kertkapcsolat</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE (megjelenik, ha van látványterv) -->
+  <section class="section" id="tervek" aria-labelledby="arch-title" data-render-block="gallery" hidden>
+    <div class="wrap">
+      <div class="col-head" style="max-width:44em">
+        <h2 id="arch-title">Tér a nyugalomnak. Hely a közösségnek.</h2>
+        <p class="muted">Az alábbi képek koncepcionális látványtervek. A végleges kialakítás a tervezés során még változhat.</p>
+      </div>
+      <div class="gallery">
+        <figure class="render span" data-render-block="g1" hidden><div data-render="g1" data-alt="A tervezett rezidencia látványképe"></div><figcaption>A tervezett rezidencia látványképe. Koncepcionális kép.</figcaption></figure>
+        <figure class="render" data-render-block="g2" hidden><div data-render="g2" data-alt="Kertkapcsolat és közösségi terek látványterve"></div><figcaption>Kertkapcsolat és közösségi terek. Koncepcionális kép.</figcaption></figure>
+        <figure class="render" data-render-block="g3" hidden><div data-render="g3" data-alt="A meglévő épület átalakításának koncepcióterve"></div><figcaption>A meglévő épület átalakításának koncepciója. Koncepcionális kép.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="dijak" aria-labelledby="price-title">
+    <div class="wrap">
+      <div class="price-head">
+        <h2 id="price-title">Szobatípusok és tervezett díjak</h2>
+        <p class="muted">A rezidencia koncepciója három szobatípussal számol. Az alábbi összegek előzetes tájékoztató jellegűek.</p>
+      </div>
+      <div class="price-card">
+        <div style="overflow-x:auto">
+          <table class="prices">
+            <caption class="sr-only">Szobatípusok és az egyszeri belépési hozzájárulás előzetes összege fejenként</caption>
+            <thead><tr><th scope="col">Szobatípus</th><th scope="col" class="num">Egyszeri belépési hozzájárulás</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><span class="room-name">Egyágyas szoba</span><span class="room-meta">1 lakó / szoba</span></th><td class="num">6&nbsp;000&nbsp;000&nbsp;Ft <span class="unit">/&nbsp;fő</span></td></tr>
+              <tr><th scope="row"><span class="room-name">Kétágyas szoba</span><span class="room-meta">2 lakó / szoba</span></th><td class="num">4&nbsp;800&nbsp;000&nbsp;Ft <span class="unit">/&nbsp;fő</span></td></tr>
+              <tr><th scope="row"><span class="room-name">Négyágyas szoba</span><span class="room-meta">4 lakó / szoba</span></th><td class="num">3&nbsp;000&nbsp;000&nbsp;Ft <span class="unit">/&nbsp;fő</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="monthly">
+          <p class="monthly-label">Tervezett havidíj<small>Minden szobatípusnál azonos</small></p>
+          <p class="monthly-value">550&nbsp;000&nbsp;Ft<span class="unit">/&nbsp;fő&nbsp;/&nbsp;hó</span></p>
+        </div>
+      </div>
+      <div class="price-foot">
+        <p class="small muted">A feltüntetett összegek előzetes, tájékoztató jellegűek, és nem minősülnek ajánlatnak. A végleges díjakat, a belépési hozzájárulás feltételeit és a szerződéses részleteket később határozzák meg.</p>
+        <a class="btn btn-primary" href="#jelentkezes" data-open="varolista">Feliratkozom az előzetes várólistára</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW THE WAITLIST WORKS -->
+  <section class="section how on-green" id="varolista" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="how-head">
+        <h2 id="how-title">Értesüljön elsőként a következő lépésekről.</h2>
+        <p>Az Ároktői Liget jelenleg tervezési szakaszban van. Az előzetes várólistára jelentkezők tájékoztatást kérhetnek a projekt előrehaladásáról, a tervezett szolgáltatásokról és a későbbi jelentkezési lehetőségekről.</p>
+      </div>
+      <ol class="steps">
+        <li><span class="step-no" aria-hidden="true">1</span><h3>Jelentkezik</h3><p>Két rövid lépésben megadja, mi érdekli, és hogyan érhetjük el.</p></li>
+        <li><span class="step-no" aria-hidden="true">2</span><h3>Tájékoztatást kap</h3><p>A projekt előrehaladásáról és a tervezett szolgáltatásokról a megadott elérhetőségein értesítjük.</p></li>
+        <li><span class="step-no" aria-hidden="true">3</span><h3>Értesül a jelentkezésről</h3><p>A későbbi jelentkezési lehetőségekről is tájékoztatjuk, amint azok ismertté válnak.</p></li>
+      </ol>
+      <div class="how-foot">
+        <p class="clarify">Az előzetes várólistára történő jelentkezés nem jelent férőhelyfoglalást vagy garantált felvételt.</p>
+        <a class="btn btn-gold" href="#jelentkezes" data-open="varolista">Feliratkozom az előzetes várólistára</a>
+        <a class="btn btn-ghost-light" href="#igenyfelmeres">Előzetes igényfelmérés kitöltése</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SURVEY -->
+  <section class="section" id="igenyfelmeres" aria-labelledby="sv-head">
+    <div class="wrap two-col">
+      <div class="col-head stick">
+        <h2 id="sv-head">Még csak tájékozódik?</h2>
+        <p class="muted">Töltse ki az előzetes igényfelmérést. Néhány rövid kérdés, amely segít felmérni, milyen igény van a rezidenciára.</p>
+        <ul class="points">
+          <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>Nem jár kötelezettséggel</li>
+          <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>Egészségügyi adatot nem kérünk</li>
+          <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg>A díjakról alkotott véleményére is kíváncsiak vagyunk</li>
+        </ul>
+      </div>
+      <div class="card bordered">
+        <div data-panel="igenyfelmeres">
+          <div class="card-head" style="margin-bottom:24px">
+            <h3 class="card-title" id="sv-title" tabindex="-1">Előzetes igényfelmérés</h3>
+            <p class="card-sub">A <span aria-hidden="true">*</span> jellel jelölt mezők kitöltése kötelező.</p>
+          </div>
+          <form id="form-igenyfelmeres" data-type="igenyfelmeres" novalidate aria-labelledby="sv-title">
+            <div class="form-alert" data-role="alert" role="alert" tabindex="-1" hidden></div>
+            <div class="hp" aria-hidden="true"><label for="sv-website">Weboldal</label><input type="text" id="sv-website" name="website" tabindex="-1" autocomplete="off"></div>
+            <div class="row-2">
+              <fieldset data-required="relation" data-msg="Kérjük, válassza ki, kinek szól az érdeklődés." aria-describedby="sv-relation-err">
+                <legend>Kinek szól az érdeklődés?<span class="req" aria-hidden="true">*</span></legend>
+                <div class="list-choices">
+                  <label class="chip"><input type="radio" id="sv-rel-self" name="relation" value="sajat"><span>Saját magamnak</span></label>
+                  <label class="chip"><input type="radio" id="sv-rel-rel" name="relation" value="hozzatartozo"><span>Hozzátartozómnak</span></label>
+                </div>
+                <p class="field-error" id="sv-relation-err" hidden></p>
+              </fieldset>
+              <div class="field">
+                <label for="sv-timing">Mikor lenne aktuális a beköltözés?<span class="req" aria-hidden="true">*</span></label>
+                <select id="sv-timing" name="timing" required data-msg="Kérjük, válassza ki a várható időpontot." aria-describedby="sv-timing-err">
+                  <option value="">Válasszon…</option>
+                  <option value="1_even_belul">1 éven belül</option>
+                  <option value="1_2_ev">1–2 éven belül</option>
+                  <option value="2_ev_utan">2 év múlva vagy később</option>
+                  <option value="nem_tudja">Még nem tudom</option>
+                </select>
+                <p class="field-error" id="sv-timing-err" hidden></p>
+              </div>
+            </div>
+            <fieldset data-required="room" data-msg="Kérjük, válasszon szobatípust." aria-describedby="sv-room-err">
+              <legend>Melyik szobatípus lenne a legmegfelelőbb?<span class="req" aria-hidden="true">*</span></legend>
+              <div class="chips grid">
+                <label class="chip"><input type="radio" id="sv-room-1" name="room" value="egyagyas"><span>Egyágyas</span></label>
+                <label class="chip"><input type="radio" id="sv-room-2" name="room" value="ketagyas"><span>Kétágyas</span></label>
+                <label class="chip"><input type="radio" id="sv-room-4" name="room" value="negyagyas"><span>Négyágyas</span></label>
+                <label class="chip"><input type="radio" id="sv-room-x" name="room" value="nem_dontott"><span>Még nem tudom</span></label>
+              </div>
+              <p class="field-error" id="sv-room-err" hidden></p>
+            </fieldset>
+            <fieldset data-required="price" data-msg="Kérjük, válasszon egy választ." aria-describedby="sv-price-hint sv-price-err">
+              <legend>Hogyan ítéli meg az előzetes díjakat?<span class="req" aria-hidden="true">*</span></legend>
+              <p class="hint" id="sv-price-hint">Belépési hozzájárulás: 3&nbsp;000&nbsp;000 – 6&nbsp;000&nbsp;000&nbsp;Ft / fő. Tervezett havidíj: 550&nbsp;000&nbsp;Ft / fő / hó.</p>
+              <div class="list-choices">
+                <label class="chip"><input type="radio" id="sv-price-ok" name="price" value="elfogadhato"><span>Elfogadhatónak tartom</span></label>
+                <label class="chip"><input type="radio" id="sv-price-entry" name="price" value="belepesi_magas"><span>A belépési hozzájárulást túl magasnak tartom</span></label>
+                <label class="chip"><input type="radio" id="sv-price-monthly" name="price" value="havidij_magas"><span>A havidíjat túl magasnak tartom</span></label>
+                <label class="chip"><input type="radio" id="sv-price-both" name="price" value="mindketto_magas"><span>Mindkettőt túl magasnak tartom</span></label>
+                <label class="chip"><input type="radio" id="sv-price-unsure" name="price" value="nem_tudja"><span>Még nem tudom megítélni</span></label>
+              </div>
+              <p class="field-error" id="sv-price-err" hidden></p>
+            </fieldset>
+            <div class="field">
+              <label for="sv-name">Név<span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="sv-name" name="name" autocomplete="name" required maxlength="120" data-msg="Kérjük, adja meg a nevét." aria-describedby="sv-name-err">
+              <p class="field-error" id="sv-name-err" hidden></p>
+            </div>
+            <div class="row-2">
+              <div class="field">
+                <label for="sv-email">E-mail-cím<span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="sv-email" name="email" autocomplete="email" inputmode="email" required maxlength="160" data-msg="Kérjük, adja meg az e-mail-címét." aria-describedby="sv-email-err">
+                <p class="field-error" id="sv-email-err" hidden></p>
+              </div>
+              <div class="field">
+                <label for="sv-phone">Telefonszám <span class="opt">(nem kötelező)</span></label>
+                <input type="tel" id="sv-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="40" placeholder="+36 30 123 4567" aria-describedby="sv-phone-err">
+                <p class="field-error" id="sv-phone-err" hidden></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="sv-comment">Megjegyzés <span class="opt">(nem kötelező)</span></label>
+              <textarea id="sv-comment" name="comment" maxlength="1000" aria-describedby="sv-comment-hint"></textarea>
+              <p class="hint" id="sv-comment-hint">Kérjük, ide ne írjon egészségügyi adatot.</p>
+            </div>
+            <div class="checks">
+              <div class="field">
+                <div class="check"><input type="checkbox" id="sv-privacy" name="privacy" required data-msg="A küldéshez kérjük, fogadja el az adatkezelési tájékoztatót." aria-describedby="sv-privacy-err"><label for="sv-privacy">Elolvastam az <a href="#adatkezeles" data-privacy>adatkezelési tájékoztatót</a>, és hozzájárulok adataim kezeléséhez az igényfelmérés céljából.<span class="req" aria-hidden="true">*</span></label></div>
+                <p class="field-error" id="sv-privacy-err" hidden></p>
+              </div>
+              <div class="check"><input type="checkbox" id="sv-marketing" name="marketing"><label for="sv-marketing">E-mailben is kérek híreket a projektről. <span class="opt">(Nem kötelező)</span></label></div>
+            </div>
+            <p class="form-info" data-role="backend-note" hidden>Ez a változat még nincs adatkezelő rendszerhez kötve, ezért a beküldött adatokat most nem tudjuk fogadni.</p>
+            <div class="form-actions">
+              <button class="btn btn-primary btn-block" type="submit" data-label="Elküldöm a válaszaimat">Elküldöm a válaszaimat</button>
+            </div>
+          </form>
+        </div>
+        <div class="success" data-role="success" hidden>
+          <div class="mark" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+          <h3 tabindex="-1">Köszönjük a válaszait.</h3>
+          <p class="muted">Válaszai segítenek abban, hogy a rezidencia tervezése a valós igényekhez igazodjon.</p>
+          <p class="small muted">Ha értesítést szeretne a következő lépésekről, <a href="#jelentkezes" data-open="varolista">jelentkezzen az előzetes várólistára is</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-white" id="gyik" aria-labelledby="faq-title">
+    <div class="wrap two-col">
+      <div class="col-head stick">
+        <h2 id="faq-title">Gyakori kérdések</h2>
+        <p class="muted">Ahol egy részlet még nem dőlt el, azt egyértelműen jelezzük.</p>
+        <div><a class="btn btn-primary" href="#jelentkezes" data-open="varolista">Jelentkezem a várólistára</a></div>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Mikor nyit meg a rezidencia?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Nyitási időpont még nincs. Az Ároktői Liget előkészítési szakaszban van, a megvalósítás ütemezése később dől el. Az előzetes várólistára jelentkezőket tájékoztatjuk, amint erről pontos információ áll rendelkezésre.</p></div>
+        </details>
+        <details>
+          <summary>Mit jelent az előzetes várólista?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Az előzetes várólista az érdeklődők nyilvántartása. A jelentkezők tájékoztatást kaphatnak a projekt előrehaladásáról, a tervezett szolgáltatásokról és a későbbi jelentkezési lehetőségekről.</p></div>
+        </details>
+        <details>
+          <summary>Garantál-e férőhelyet a jelentkezés?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Nem. Sem az előzetes várólistára történő jelentkezés, sem az igényfelmérés kitöltése nem jelent férőhelyfoglalást vagy garantált felvételt, és egyik sem jár fizetési kötelezettséggel.</p></div>
+        </details>
+        <details>
+          <summary>Véglegesek a feltüntetett árak?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Nem. A feltüntetett összegek előzetes, tájékoztató jellegűek. A végleges díjakat, a belépési hozzájárulás feltételeit és a szerződéses részleteket később határozzák meg.</p></div>
+        </details>
+        <details>
+          <summary>Milyen ellátást terveznek biztosítani?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>A koncepció szerint a rezidencia 24 órás felügyeletet és gondozást, szállást és teljes ellátást napi étkezéssel, alapápolást és segítségnyújtást, közösségi programokat és mentálhigiénés foglalkozásokat, takarítást, valamint közösségi tereket és kertkapcsolatot biztosítana. A szolgáltatások részletei még nem véglegesek.</p></div>
+        </details>
+        <details>
+          <summary>Hogyan kapok tájékoztatást a projekt előrehaladásáról?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Ha jelentkezik az előzetes várólistára, a projekt előrehaladásáról a megadott e-mail-címen vagy telefonszámon tájékoztatjuk. Az aktuális információk ezen az oldalon is megjelennek.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section class="privacy" aria-label="Adatkezelési tájékoztató">
+    <div class="wrap">
+      <details id="adatkezeles">
+        <summary>Adatkezelési tájékoztató (összefoglaló)<span class="pm" aria-hidden="true"></span></summary>
+        <dl class="privacy-grid">
+          <div><dt>Adatkezelő</dt><dd><span class="ph">[Az üzemeltető / adatkezelő neve, székhelye és cégjegyzékszáma – megerősítésre vár]</span></dd></div>
+          <div><dt>Kezelt adatok</dt><dd>Név, e-mail-cím, telefonszám, az űrlapon adott válaszok (kinek szól az érdeklődés, szobatípus, várható időpont, a díjakkal kapcsolatos vélemény, megjegyzés) és a hirdetési kampány forrása. Egészségügyi adatot nem kérünk.</dd></div>
+          <div><dt>Cél</dt><dd>Az előzetes érdeklődés nyilvántartása és felmérése, valamint tájékoztatás a projekt előrehaladásáról. További hírek küldése csak külön, önkéntes hozzájárulással.</dd></div>
+          <div><dt>Jogalap, megőrzés</dt><dd><span class="ph">[Jogalap és megőrzési idő – jogi ellenőrzés után kitöltendő]</span></dd></div>
+          <div><dt>Az Ön jogai</dt><dd>Kérhet hozzáférést adataihoz, azok helyesbítését vagy törlését, tiltakozhat az adatkezelés ellen, és hozzájárulását bármikor visszavonhatja. Panasszal a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH) fordulhat.</dd></div>
+          <div><dt>Sütik és mérés</dt><dd>Statisztikai és hirdetésmérő eszközöket (Google Analytics, Meta Pixel) csak az Ön hozzájárulása után használunk. <button type="button" class="btn-link" data-consent-open>Süti-beállítások módosítása</button></dd></div>
+        </dl>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer on-green" id="kapcsolat">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-brand">Ároktői Liget<br>Senior Rezidencia</p>
+        <p style="color:var(--on-green-2)">Ároktő, Magyarország</p>
+      </div>
+      <div class="footer-col">
+        <h3>Kapcsolat</h3>
+        <p><span class="ph">[E-mail-cím – megerősítésre vár]</span></p>
+        <p><span class="ph">[Telefonszám – megerősítésre vár]</span></p>
+      </div>
+      <div class="footer-col">
+        <h3>Tudnivalók</h3>
+        <ul>
+          <li><a href="#adatkezeles" data-privacy>Adatkezelési tájékoztató</a></li>
+          <li><a href="#jelentkezes" data-open="varolista">Előzetes várólista</a></li>
+          <li><a href="#igenyfelmeres">Előzetes igényfelmérés</a></li>
+          <li><button type="button" class="btn-link" data-consent-open>Süti-beállítások</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ároktői Liget Senior Rezidencia · <span class="ph">[Üzemeltető cégadatai – megerősítésre vár]</span></p>
+      <p>A látványtervek és a díjak előzetes, tájékoztató jellegűek.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky-cta" hidden>
+  <a class="btn btn-primary btn-block" href="#jelentkezes" data-open="varolista">Jelentkezem az előzetes várólistára</a>
+</div>
+
+<div class="consent" id="consent" role="region" aria-label="Süti-beállítások" hidden>
+  <div class="wrap">
+    <div class="consent-text">
+      <p><strong>Sütik és mérés.</strong> A működéshez szükséges sütiken túl csak az Ön hozzájárulásával használunk statisztikai és hirdetésmérési eszközöket. Döntését bármikor módosíthatja az oldal alján.</p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" class="btn btn-ghost" id="consent-reject">Csak a szükségesek</button>
+      <button type="button" class="btn btn-ghost" id="consent-custom" aria-expanded="false" aria-controls="consent-prefs">Beállítások</button>
+      <button type="button" class="btn btn-primary" id="consent-accept">Elfogadom</button>
+    </div>
+    <div class="consent-prefs" id="consent-prefs" hidden>
+      <div class="check"><input type="checkbox" id="c-analytics"><label for="c-analytics"><strong>Statisztika</strong>: anonim látogatottsági adatok (Google Analytics)</label></div>
+      <div class="check"><input type="checkbox" id="c-marketing"><label for="c-marketing"><strong>Hirdetésmérés</strong>: a Facebook- és Instagram-hirdetések eredményeinek mérése (Meta Pixel)</label></div>
+      <div><button type="button" class="btn btn-primary" id="consent-save">Kiválasztottak mentése</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  document.documentElement.lang = "hu";
+
+  /* ===== Élesítési beállítások ===== */
+  var CONFIG = {
+    submitEndpoint: "",      // pl. https://hook.eu2.make.com/... vagy saját API – JSON POST
+    metaPixelId: "",         // pl. "123456789012345"
+    ga4MeasurementId: "",    // pl. "G-XXXXXXXXXX"
+    renders: { hero: "", intro: "", g1: "", g2: "", g3: "" }
+  };
+
+  /* ===== Látványtervek: csak kitöltve jelennek meg ===== */
+  var anyGallery = false;
+  Object.keys(CONFIG.renders).forEach(function(key){
+    var src = CONFIG.renders[key]; if (!src) return;
+    var slot = document.querySelector('[data-render="' + key + '"]'); if (!slot) return;
+    var img = new Image(); img.src = src; img.alt = slot.getAttribute("data-alt") || ""; img.decoding = "async";
+    if (key !== "hero") img.loading = "lazy";
+    slot.replaceWith(img);
+    var block = document.querySelector('[data-render-block="' + key + '"]'); if (block) block.hidden = false;
+    if (/^g\d$/.test(key)) anyGallery = true;
+  });
+  if (anyGallery) document.querySelector('[data-render-block="gallery"]').hidden = false;
+
+  /* ===== Tárolás ===== */
+  function store(kind){ try { return window[kind]; } catch(e){ return null; } }
+  function getJSON(kind, key){ try { var s = store(kind); var v = s && s.getItem(key); return v ? JSON.parse(v) : null; } catch(e){ return null; } }
+  function setJSON(kind, key, val){ try { var s = store(kind); if (s) s.setItem(key, JSON.stringify(val)); } catch(e){} }
+
+  /* ===== Kampányforrás ===== */
+  var attribution = (function(){
+    var KEY = "al_attr_v1", out = getJSON("sessionStorage", KEY);
+    try {
+      var p = new URLSearchParams(location.search), found = null;
+      ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid"].forEach(function(k){
+        var v = p.get(k); if (v) { found = found || {}; found[k] = v.slice(0, 200); }
+      });
+      if (found) { try { if (document.referrer) found.referrer_host = new URL(document.referrer).host; } catch(e){} out = found; setJSON("sessionStorage", KEY, out); }
+    } catch(e){}
+    if (!out) { out = {}; try { if (document.referrer) out.referrer_host = new URL(document.referrer).host; } catch(e){} }
+    return out;
+  })();
+
+  /* ===== Hozzájárulás és mérés ===== */
+  var CONSENT_KEY = "al_consent_v1";
+  var consent = getJSON("localStorage", CONSENT_KEY);
+  var banner = document.getElementById("consent"), prefs = document.getElementById("consent-prefs"), customBtn = document.getElementById("consent-custom");
+  var cA = document.getElementById("c-analytics"), cM = document.getElementById("c-marketing");
+  function loadScript(src){ var s = document.createElement("script"); s.async = true; s.src = src; document.head.appendChild(s); }
+  var gaLoaded = false, pixelLoaded = false;
+  function loadGA(){
+    if (gaLoaded || !CONFIG.ga4MeasurementId) return; gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag("js", new Date()); window.gtag("config", CONFIG.ga4MeasurementId);
+    loadScript("https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(CONFIG.ga4MeasurementId));
+  }
+  function loadPixel(){
+    if (pixelLoaded || !CONFIG.metaPixelId) return; pixelLoaded = true;
+    var n = window.fbq = function(){ n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+    if (!window._fbq) window._fbq = n;
+    n.push = n; n.loaded = true; n.version = "2.0"; n.queue = [];
+    loadScript("https://connect.facebook.net/hu_HU/fbevents.js");
+    window.fbq("init", CONFIG.metaPixelId); window.fbq("track", "PageView");
+  }
+  function applyConsent(){
+    if (!consent) return;
+    if (consent.analytics) loadGA(); else if (window.gtag) window.gtag("consent", "update", { analytics_storage: "denied" });
+    if (consent.marketing) loadPixel(); else if (window.fbq) window.fbq("consent", "revoke");
+  }
+  function saveConsent(a, m){
+    consent = { analytics: !!a, marketing: !!m, ts: new Date().toISOString(), v: 1 };
+    setJSON("localStorage", CONSENT_KEY, consent); banner.hidden = true; applyConsent(); updateSticky();
+  }
+  function openConsent(showPrefs){
+    cA.checked = !!(consent && consent.analytics); cM.checked = !!(consent && consent.marketing);
+    prefs.hidden = !showPrefs; customBtn.setAttribute("aria-expanded", String(!!showPrefs)); banner.hidden = false; updateSticky();
+  }
+  document.getElementById("consent-reject").addEventListener("click", function(){ saveConsent(false, false); });
+  document.getElementById("consent-accept").addEventListener("click", function(){ saveConsent(true, true); });
+  document.getElementById("consent-save").addEventListener("click", function(){ saveConsent(cA.checked, cM.checked); });
+  customBtn.addEventListener("click", function(){ var open = prefs.hidden; prefs.hidden = !open; customBtn.setAttribute("aria-expanded", String(open)); });
+  document.querySelectorAll("[data-consent-open]").forEach(function(b){ b.addEventListener("click", function(){ openConsent(true); }); });
+
+  /* Csak személyes adat nélküli paraméterek. */
+  var PIXEL_EVENTS = { waitlist_submit: "Lead", survey_submit: "SubmitApplication" };
+  function track(name, params){
+    params = params || {};
+    if (consent && consent.analytics) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: name }, params));
+      if (window.gtag) window.gtag("event", name, params);
+    }
+    if (consent && consent.marketing && window.fbq && PIXEL_EVENTS[name]) window.fbq("track", PIXEL_EVENTS[name], params);
+  }
+
+  /* ===== Mobil menü ===== */
+  var menuBtn = document.getElementById("menu-btn"), mobileNav = document.getElementById("mobile-nav");
+  function setMenu(open){ mobileNav.hidden = !open; menuBtn.setAttribute("aria-expanded", String(open)); menuBtn.textContent = open ? "Bezárás" : "Menü"; }
+  menuBtn.addEventListener("click", function(){ setMenu(mobileNav.hidden); });
+  mobileNav.addEventListener("click", function(e){ if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !mobileNav.hidden) { setMenu(false); menuBtn.focus(); } });
+
+  /* ===== Navigáció az űrlapokhoz ===== */
+  var privacy = document.getElementById("adatkezeles");
+  document.addEventListener("click", function(e){
+    var p = e.target.closest("[data-privacy]"); if (p) { privacy.open = true; return; }
+    var el = e.target.closest("[data-open]"); if (!el) return;
+    setMenu(false);
+    var title = document.getElementById("wl-title");
+    setTimeout(function(){ if (title && !title.closest("[hidden]")) title.focus({ preventScroll: true }); }, 500);
+  });
+
+  /* ===== Ragadós mobil CTA ===== */
+  var sticky = document.getElementById("sticky-cta");
+  var visible = { card: true, how: false, survey: false };
+  function updateSticky(){
+    var done = document.querySelector('[data-panel="varolista"]').hidden;
+    sticky.hidden = !banner.hidden || done || visible.card || visible.how || visible.survey;
+  }
+  if ("IntersectionObserver" in window) {
+    var watch = { card: document.getElementById("jelentkezes"), how: document.getElementById("varolista"), survey: document.getElementById("igenyfelmeres") };
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ Object.keys(watch).forEach(function(k){ if (watch[k] === en.target) visible[k] = en.isIntersecting; }); });
+      updateSticky();
+    }, { threshold: 0.05 });
+    Object.keys(watch).forEach(function(k){ io.observe(watch[k]); });
+  }
+  if (consent) applyConsent(); else banner.hidden = false;
+  updateSticky();
+
+  /* ===== Háttérrendszer ===== */
+  var dbPromise = null;
+  function getDb(){
+    if (!dbPromise) dbPromise = (window.claude && typeof window.claude.use === "function")
+      ? Promise.resolve(window.claude.use("db")).catch(function(){ return null; }) : Promise.resolve(null);
+    return dbPromise;
+  }
+  function withTimeout(p, ms){ return Promise.race([p, new Promise(function(_, rej){ setTimeout(function(){ rej({ code: "timeout" }); }, ms); })]); }
+  function sendLead(payload){
+    if (CONFIG.submitEndpoint) {
+      return withTimeout(fetch(CONFIG.submitEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }), 20000)
+        .then(function(res){ if (!res.ok) throw { code: "http_" + res.status }; });
+    }
+    return getDb().then(function(db){ if (!db) throw { code: "no_backend" }; return withTimeout(db.collection("leads").add(payload), 20000); });
+  }
+  window.addEventListener("load", function(){
+    setTimeout(function(){
+      if (CONFIG.submitEndpoint) return;
+      getDb().then(function(db){ if (!db) document.querySelectorAll('[data-role="backend-note"]').forEach(function(n){ n.hidden = false; }); });
+    }, 0);
+  });
+
+  /* ===== Validáció ===== */
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  function errFor(el){
+    var ids = (el.getAttribute("aria-describedby") || "").split(/\s+/);
+    for (var i = 0; i < ids.length; i++) if (/-err$/.test(ids[i])) return document.getElementById(ids[i]);
+    return null;
+  }
+  function setError(el, msg){
+    if (el.tagName === "FIELDSET") el.classList.toggle("is-invalid", !!msg);
+    el.setAttribute("aria-invalid", msg ? "true" : "false");
+    var e = errFor(el); if (e) { e.textContent = msg || ""; e.hidden = !msg; }
+  }
+  function checkControl(el){
+    var v = (el.value || "").trim(), msg = "";
+    if (el.type === "checkbox") { if (el.required && !el.checked) msg = el.dataset.msg; }
+    else if (el.required && !v) msg = el.dataset.msg;
+    else if (v && el.type === "email" && !EMAIL_RE.test(v)) msg = "Kérjük, érvényes e-mail-címet adjon meg (például nev@pelda.hu).";
+    else if (v && el.type === "tel") {
+      var d = v.replace(/\D/g, "");
+      if (!/^[+\d\s()\/-]+$/.test(v) || d.length < 9 || d.length > 15) msg = "Kérjük, érvényes telefonszámot adjon meg, legalább 9 számjeggyel.";
+    }
+    setError(el, msg); return !msg;
+  }
+  function checkGroup(fs, form){
+    var ok = !!form.querySelector('input[name="' + fs.dataset.required + '"]:checked');
+    setError(fs, ok ? "" : fs.dataset.msg); return ok;
+  }
+  function validate(scope, form){
+    scope.querySelectorAll("input[required], select[required], input[type=email], input[type=tel]").forEach(checkControl);
+    scope.querySelectorAll("fieldset[data-required]").forEach(function(fs){ checkGroup(fs, form); });
+    var bad = scope.querySelector('[aria-invalid="true"]');
+    return bad ? (bad.tagName === "FIELDSET" ? bad.querySelector("input") : bad) : null;
+  }
+  function collect(form){
+    var fd = new FormData(form), get = function(k){ return (fd.get(k) || "").toString().trim(); }, type = form.dataset.type;
+    var p = {
+      type: type, submittedAt: new Date().toISOString(),
+      name: get("name"), email: get("email").toLowerCase(), phone: get("phone"),
+      relation: get("relation"), roomType: get("room"), timing: get("timing"),
+      privacyAccepted: true, marketingConsent: fd.get("marketing") === "on", consentTextVersion: "2026-10-v2",
+      attribution: attribution
+    };
+    if (type === "igenyfelmeres") { p.priceAcceptance = get("price"); p.comment = get("comment"); }
+    else p.pricingReviewed = fd.get("pricing_reviewed") === "on";
+    return p;
+  }
+
+  /* ===== Űrlapok ===== */
+  document.querySelectorAll("form[data-type]").forEach(function(form){
+    var type = form.dataset.type, formType = type === "varolista" ? "elozetes_varolista" : "elozetes_igenyfelmeres";
+    var panel = form.closest("[data-panel]"), card = panel.parentElement;
+    var alertBox = form.querySelector('[data-role="alert"]'), btn = form.querySelector('button[type="submit"]');
+    var steps = form.querySelectorAll("[data-step]"), current = 1, started = false, busy = false;
+
+    function showStep(n){
+      current = n;
+      steps.forEach(function(s){ s.hidden = String(n) !== s.dataset.step; });
+      var bars = card.querySelectorAll(".progress-bar span");
+      bars.forEach(function(b, i){ b.classList.toggle("on", i < n); });
+      var lbl = document.getElementById("wl-progress");
+      if (lbl) lbl.textContent = n === 1 ? "1. lépés a 2-ből: néhány gyors kérdés" : "2. lépés a 2-ből: hová küldhetjük a tájékoztatást?";
+      alertBox.hidden = true;
+    }
+    function nextStep(){
+      var bad = validate(steps[0], form);
+      if (bad) { bad.focus(); track("form_validation_error", { form_type: formType, step: 1 }); return; }
+      showStep(2); track("form_step_complete", { form_type: formType, step: 1 });
+      var first = form.querySelector('[data-step="2"] input'); if (first) first.focus();
+    }
+    var nextBtn = form.querySelector("[data-next]"); if (nextBtn) nextBtn.addEventListener("click", nextStep);
+    var backBtn = form.querySelector("[data-back]"); if (backBtn) backBtn.addEventListener("click", function(){ showStep(1); var f = form.querySelector('[data-step="1"] input'); if (f) f.focus(); });
+
+    form.addEventListener("input", function(){ if (!started) { started = true; track("form_start", { form_type: formType }); } });
+    form.addEventListener("change", function(e){
+      var t = e.target;
+      if (t.type === "radio") { var fs = t.closest("fieldset[data-required]"); if (fs && fs.classList.contains("is-invalid")) checkGroup(fs, form); }
+      else if (t.getAttribute("aria-invalid") === "true") checkControl(t);
+    });
+    form.addEventListener("focusout", function(e){ var t = e.target; if ((t.type === "email" || t.type === "tel") && t.value.trim()) checkControl(t); });
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      if (busy) return;
+      if (steps.length && current === 1) { nextStep(); return; }
+      alertBox.hidden = true;
+      if (form.elements.website && form.elements.website.value) return;
+      var bad = validate(steps.length ? steps[1] : form, form);
+      if (bad) {
+        var n = form.querySelectorAll('[aria-invalid="true"]').length;
+        alertBox.textContent = n > 1 ? "Kérjük, javítsa a megjelölt " + n + " mezőt." : "Kérjük, javítsa a megjelölt mezőt.";
+        alertBox.hidden = false; bad.focus();
+        track("form_validation_error", { form_type: formType });
+        return;
+      }
+      var payload = collect(form);
+      busy = true; btn.setAttribute("aria-busy", "true"); btn.disabled = true; btn.textContent = "Küldés folyamatban…";
+      sendLead(payload).then(function(){
+        panel.hidden = true;
+        var ok = card.querySelector('[data-role="success"]'); ok.hidden = false; ok.querySelector("h3").focus();
+        var ev = { form_type: formType, room_type: payload.roomType, timing: payload.timing, relation: payload.relation, campaign_source: attribution.utm_source || "(nincs)" };
+        if (type === "igenyfelmeres") ev.price_acceptance = payload.priceAcceptance;
+        track(type === "varolista" ? "waitlist_submit" : "survey_submit", ev);
+        updateSticky();
+      }).catch(function(err){
+        var code = (err && err.code) || "unknown";
+        alertBox.textContent = (code === "no_backend" || code === "invalid_argument" || code === "not_granted")
+          ? "Az űrlap jelenleg nem tud adatot fogadni, ezért a jelentkezését nem rögzítettük. Kérjük, próbálja meg később."
+          : "A küldés nem sikerült, a jelentkezését nem rögzítettük. Kérjük, ellenőrizze az internetkapcsolatot, majd próbálja újra.";
+        alertBox.hidden = false; alertBox.focus();
+        track("form_submit_error", { form_type: formType, reason: String(code).slice(0, 40) });
+      }).then(function(){ busy = false; btn.removeAttribute("aria-busy"); btn.disabled = false; btn.textContent = btn.dataset.label; });
+    });
+  });
+})();
+</script>
+</body>
+</html>

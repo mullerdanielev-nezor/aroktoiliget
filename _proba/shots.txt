@@ -1,0 +1,6 @@
+JS: 1
+METRICS: {"sw":1366,"iw":1366,"h":900,"wide":[]}
+LOG Failed to load resource: the server responded with a status of 404 (File not found) http://127.0.0.1:8080/favicon.ico
+JS: 1
+METRICS: {"sw":1366,"iw":1366,"h":900,"wide":[]}
+LOG Failed to load resource: the server responded with a status of 404 (File not found) http://127.0.0.1:8080/favicon.ico
