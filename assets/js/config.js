@@ -5,7 +5,9 @@
                       addig az űrlap nem fogad adatot.
    formsubmitCc       további címzettek vesszővel elválasztva (nem kötelező)
    autoresponse       a jelentkezőnek küldött automatikus visszaigazolás szövege ("" = nincs)
-   submitEndpoint     saját backend / CRM webhook (JSON POST) – ha ki van töltve, a FormSubmit helyett ez fut
+   formspreeEndpoint  Formspree űrlapcím (pl. "https://formspree.io/f/xyzabcd") – ha ki van töltve, a FormSubmit
+                      helyett ez fut. A Formspree-ben a reCAPTCHA-t ki kell kapcsolni, különben nem fogad adatot.
+   submitEndpoint     saját backend / CRM webhook (JSON POST) – ha ki van töltve, minden más helyett ez fut
    metaPixelId        Meta Pixel azonosító (csak hozzájárulás után töltődik be)
    ga4MeasurementId   GA4 mérési azonosító (csak hozzájárulás után töltődik be)
    renders            látványtervek URL-jei; a képes blokkok csak kitöltve jelennek meg */
@@ -15,6 +17,7 @@ window.AL_CONFIG = {
   autoresponse: {
     varolista: "Köszönjük az Ároktői Liget Senior Rezidenciára leadott előzetes jelentkezését. A nyitás előtt elsőként értesítjük a beköltözés lehetőségéről, addig pedig a projekt előrehaladásáról is tájékoztatjuk. A jelentkezés nem jelent férőhelyfoglalást vagy garantált felvételt, és nem jár fizetési kötelezettséggel."
   },
+  formspreeEndpoint: "",
   submitEndpoint: "",
   metaPixelId: "1181229674234476",
   ga4MeasurementId: "",      // pl. "G-XXXXXXXXXX"
