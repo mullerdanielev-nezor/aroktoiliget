@@ -12,12 +12,12 @@
    ga4MeasurementId   GA4 mérési azonosító (csak hozzájárulás után töltődik be)
    renders            látványtervek URL-jei; a képes blokkok csak kitöltve jelennek meg */
 window.AL_CONFIG = {
-  formsubmitTo: "mullerdanielev@gmail.com",          // pl. "info@aroktoiliget.hu" vagy "a1b2c3d4e5f6..."
+  formsubmitTo: "",          // pl. "info@aroktoiliget.hu" vagy "a1b2c3d4e5f6..."
   formsubmitCc: "",
   autoresponse: {
     varolista: "Köszönjük az Ároktői Liget Senior Rezidenciára leadott előzetes jelentkezését. A nyitás előtt elsőként értesítjük a beköltözés lehetőségéről, addig pedig a projekt előrehaladásáról is tájékoztatjuk. A jelentkezés nem jelent férőhelyfoglalást vagy garantált felvételt, és nem jár fizetési kötelezettséggel."
   },
-  formspreeEndpoint: "",
+  formspreeEndpoint: "https://formspree.io/f/xvkkrobg",
   submitEndpoint: "",
   metaPixelId: "1181229674234476",
   ga4MeasurementId: "",      // pl. "G-XXXXXXXXXX"
