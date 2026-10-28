@@ -809,7 +809,7 @@
   function readable(form, p){
     var isWl = p.type === "varolista", room = labelOf(form, "room"), timing = labelOf(form, "timing");
     var r = {
-      _subject: (isWl ? "Új jelentkezés" : "Új igényfelmérés") + ": " + p.name + (room ? " – " + room : "") + (timing ? ", " + timing.toLowerCase() : ""),
+      _subject: "[Ároktői Liget] " + (isWl ? "Új jelentkezés" : "Új igényfelmérés") + ": " + p.name + (room ? " – " + room : "") + (timing ? ", " + timing.toLowerCase() : ""),
       _template: "table", _captcha: "false",
       "Név": p.name, email: p.email, "Telefonszám": p.phone || "–",
       "Kinek szól": labelOf(form, "relation") || "–", "Szobatípus": room || "–", "Beköltözés": timing || "–"
