@@ -548,3 +548,7 @@ html.no-scroll{overflow:hidden}
 
 /* Archivo: a szoros betűköz mellett a szóközöket kicsit nyitjuk */
 h1,h2,h3,.q-title,.statement{word-spacing:.08em}
+
+/* Pici „Illusztráció” jelölés a látványképek sarkában */
+.hero-figure,.plan-slide,.room-card{position:relative}
+.illu{position:absolute;top:8px;right:8px;z-index:1;padding:2px 6px;border-radius:3px;background:rgba(0,0,0,.42);color:#fff;font:600 .625rem/1.2 var(--sans);letter-spacing:.03em;pointer-events:none}
