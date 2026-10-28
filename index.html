@@ -721,6 +721,18 @@
 
   /* ===== Beküldés: saját végpont, Formspree vagy FormSubmit ===== */
   function withTimeout(p, ms){ return Promise.race([p, new Promise(function(_, rej){ setTimeout(function(){ rej({ code: "timeout" }); }, ms); })]); }
+  /* Visszaigazoló e-mail a jelentkezőnek a FormSubmit automatikus válaszával (a Formspree ingyenes csomagja nem küld ilyet).
+     A háttérben fut, a köszönőoldalra lépés nem vár rá (keepalive); egyszerű űrlapkódolás, így nincs CORS-előkérés. */
+  function sendConfirmation(p){
+    var text = CONFIG.autoresponse && CONFIG.autoresponse[p.type];
+    if (!CONFIG.formspreeEndpoint || !CONFIG.formsubmitTo || !text || !p.email) return;
+    var fd = new URLSearchParams();
+    fd.append("_subject", "Ároktői Liget – megkaptuk jelentkezését");
+    fd.append("_autoresponse", text.replace("{nev}", p.name));
+    fd.append("_template", "basic"); fd.append("_captcha", "false");
+    fd.append("Név", p.name); fd.append("email", p.email);
+    try { fetch("https://formsubmit.co/ajax/" + encodeURIComponent(CONFIG.formsubmitTo), { method: "POST", body: fd, keepalive: true }).catch(function(){}); } catch(e){}
+  }
   function sendLead(payload, readable){
     if (CONFIG.submitEndpoint) {
       return withTimeout(fetch(CONFIG.submitEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }), 20000)
@@ -830,7 +842,7 @@
     r["Honnan jelentkezett"] = p.origin === "–" ? "Jelentkezési rész" : p.origin;
     r["Kampány"] = attrText(p.attribution) || "Közvetlen látogatás";
     if (CONFIG.formsubmitCc) r._cc = CONFIG.formsubmitCc;
-    var auto = CONFIG.autoresponse && CONFIG.autoresponse[p.type]; if (auto) r._autoresponse = auto;
+    var auto = CONFIG.autoresponse && CONFIG.autoresponse[p.type]; if (auto) r._autoresponse = auto.replace("{nev}", p.name);
     return r;
   }
 
@@ -943,6 +955,7 @@
         var stored = false;
         try { sessionStorage.setItem("al_thanks", JSON.stringify({ g: givenName(), rel: payload.relation === "sajat" ? "self" : "rel", ev: ev })); stored = true; } catch(e){}
         if (!stored) track("waitlist_submit", ev);
+        sendConfirmation(payload);
         location.href = "koszonjuk.html";
       }).catch(function(err){
         var code = (err && err.code) || "unknown";
