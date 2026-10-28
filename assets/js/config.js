@@ -12,7 +12,8 @@
    ga4MeasurementId   GA4 mérési azonosító (csak hozzájárulás után töltődik be)
    renders            látványtervek URL-jei; a képes blokkok csak kitöltve jelennek meg */
 window.AL_CONFIG = {
-  formsubmitTo: "mullerdanielev@gmail.com",          // pl. "info@aroktoiliget.hu" vagy "a1b2c3d4e5f6..."
+  /* Üres = nincs visszaigazoló e-mail a jelentkezőnek. Visszakapcsolás: "mullerdanielev@gmail.com" (FormSubmit). */
+  formsubmitTo: "",          // pl. "info@aroktoiliget.hu" vagy "a1b2c3d4e5f6..."
   formsubmitCc: "",
   autoresponse: {
     /* {nev} helyére a jelentkező neve kerül */
