@@ -729,7 +729,7 @@
     if (!CONFIG.formsubmitTo) return Promise.reject({ code: "no_backend" });
     return withTimeout(fetch("https://formsubmit.co/ajax/" + encodeURIComponent(CONFIG.formsubmitTo), {
       method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(readable)
-    }), 20000).then(function(res){
+    }), 60000).then(function(res){  /* a FormSubmit néha 30+ másodperc alatt válaszol */
       return res.json().catch(function(){ return {}; }).then(function(j){
         /* A FormSubmit a sikert szövegként ("true") jelzi. Aktiválatlan űrlapnál success: "false". */
         if (!res.ok || String(j.success) !== "true") throw { code: /activat/i.test(j.message || "") ? "not_activated" : "http_" + res.status };
@@ -927,6 +927,8 @@
       }
       var payload = collect(form);
       busy = true; btn.setAttribute("aria-busy", "true"); btn.disabled = true; btn.textContent = "Küldés folyamatban…";
+      /* Lassú válasznál jelezzük, hogy nem akadt el. */
+      var slowTimer = setTimeout(function(){ if (busy) btn.textContent = "Még dolgozunk rajta, egy pillanat…"; }, 8000);
       sendLead(payload, readable(form, payload)).then(function(){
         var ev = { form_type: formType, room_type: payload.roomType, timing: payload.timing, relation: payload.relation, entry_point: payload.origin, campaign_source: attribution.utm_source || "(nincs)" };
         /* A köszönőoldal ebből szólítja meg a jelentkezőt és ott méri a konverziót; kiolvasás után törli. */
@@ -941,7 +943,7 @@
           : "A küldés nem sikerült, a jelentkezését nem rögzítettük. Kérjük, ellenőrizze az internetkapcsolatot, majd próbálja újra.";
         alertBox.hidden = false; alertBox.focus();
         track("form_submit_error", { form_type: formType, reason: String(code).slice(0, 40) });
-      }).then(function(){ busy = false; btn.removeAttribute("aria-busy"); btn.disabled = false; btn.textContent = btn.dataset.label; });
+      }).then(function(){ clearTimeout(slowTimer); busy = false; btn.removeAttribute("aria-busy"); btn.disabled = false; btn.textContent = btn.dataset.label; });
     });
   });
 })();
